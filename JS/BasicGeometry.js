@@ -2,7 +2,7 @@
 //场景设置
 function main() {
     //指定画布
-    const canvas = document.querySelector('#d');
+    const canvas = document.querySelector('#c');
 
     //create a renderer
     const renderer = new THREE.WebGLRenderer({canvas});
