@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Simple Animation</title>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    </head>
+    <body>
+        <canvas id="c" width="1000" height="1000"></canvas>
+        <script src="../../../Library/three/build/three.js"></script>
+        <script src="../JS/ThreeDimensionCubeArray.js"></script>
+        <div><h1>scene consistence</h1></div>
+        <pre><code class="language-mermaid"><div class="mermaid">
+            graph BT
+                1["二维数组(禁止使用三维数组套娃)<br>组成方块的位置参数[[x1,x2,x3]]"] --> 2["用三个for循环填充方块的三维坐标<br>以及生成彩虹渐变"];
+                Mesh["8*8*8Mesh"] --> Scene["Scene"];
+                Geometry["BoxGeometry"] --> Mesh;
+                Material["MeshPhongMaterial"] --> Scene;
+                Light["PointLight"] --> Scene;
+        </div></code></pre>
+    </body>
+</html>
