@@ -85,8 +85,6 @@ function main() {
     //循环创建cube/三维cube
     //创建Cube的Object
 
-
-
     function repeatCreateCube() {
             const cube_1_1 = new Array();
             for (i = 0; i <= 4; i++) {
@@ -201,9 +199,29 @@ function main() {
     repeatCreateCube()
 
 
+    function resizeRendererDisplaySize(renderer) {
+        const canvas = renderer.domElement;
+        const pixelRatio = window.devicePixelRatio;
+        const width  = canvas.clientWidth  * pixelRatio | 0;
+        const height = canvas.clientHeight * pixelRatio | 0;
+        const needResize = canvas.width !== width || canvas.height !== height;
+        if (needResize) {
+          renderer.setSize(width, height, false);
+        }
+        return needResize;
+    }
+
     function render(time) {
         time *= 0.001;
     
+
+        if(resizeRendererDisplaySize(renderer)) {
+            const canvas = renderer.domElement;
+            camera.aspect = canvas.clientWidth / canvas.clientHeight;
+            camera.updateProjectionMatrix();
+        }
+
+        
         camera.rotation.x = Math.cos(time);
         camera.rotation.y = Math.sin(time);
         renderer.render(scene, camera);
