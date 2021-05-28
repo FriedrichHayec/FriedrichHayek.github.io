@@ -211,21 +211,21 @@ function main() {
     //     return needResize;
     // }
 
-    // function render(time) {
+    function render(time) {
 
-    //     time *= 0.001;
+        time *= 0.001;
 
-    //     // if(resizeRendererDisplaySize(renderer)) {
-    //     //     const canvas = renderer.domElement;
-    //     //     camera.aspect = canvas.clientWidth / canvas.clientHeight;
-    //     //     camera.updateProjectionMatrix();
-    //     // }
-    //     camera.position.x = Math.cos(time);
-    //     camera.position.y = Math.sin(time);
-    //     renderer.render(scene, camera);
-    //     requestAnimationFrame(render);
-    // }
-    // requestAnimationFrame(render)
+        // if(resizeRendererDisplaySize(renderer)) {
+        //     const canvas = renderer.domElement;
+        //     camera.aspect = canvas.clientWidth / canvas.clientHeight;
+        //     camera.updateProjectionMatrix();
+        // }
+        camera.rotation.x = Math.cos(time);
+        camera.rotation.y = Math.sin(time);
+        renderer.render(scene, camera);
+        requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render)
 
     renderer.render(scene, camera)
     // function repeatAddObj() {
