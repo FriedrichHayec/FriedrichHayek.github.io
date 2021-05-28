@@ -212,7 +212,7 @@ function main() {
     // }
 
     function render(time) {
-        requestAnimationFrame(render);
+
         time *= 0.001;
 
         // if(resizeRendererDisplaySize(renderer)) {
@@ -221,10 +221,10 @@ function main() {
         //     camera.updateProjectionMatrix();
         // }
 
-
         camera.rotation.x = Math.cos(time);
         camera.rotation.y = Math.sin(time);
         renderer.render(scene, camera);
+        requestAnimationFrame(render);
     }
     requestAnimationFrame(render)
 
