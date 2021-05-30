@@ -9,7 +9,6 @@ function initStats() {
     stats.domElement.style.position = 'absolute';
     stats.domElement.style.left = '0px';
     stats.domElement.style.top = '0px';
-    stats.domElement.setSize(100,100)
     //将统计对象添加到对应的<div>元素中
     document.getElementById("Stats-output").appendChild(stats.domElement);
     return stats;
