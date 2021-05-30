@@ -2,17 +2,18 @@ const canvas = document.querySelector('#c')
 const renderer = new THREE.WebGLRenderer({canvas});
 
 function initStats() {
-                var stats = new Stats();
-                //设置统计模式
-                stats.setMode(0); // 0: fps, 1: ms
-                //统计信息显示在左上角
-                stats.domElement.style.position = 'absolute';
-                stats.domElement.style.left = '0px';
-                stats.domElement.style.top = '0px';
-                //将统计对象添加到对应的<div>元素中
-                document.getElementById("Stats-output").appendChild(stats.domElement);
-                return stats;
-            }
+    var stats = new Stats();
+    //设置统计模式
+    stats.setMode(0); // 0: fps, 1: ms
+    //统计信息显示在左上角
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.left = '0px';
+    stats.domElement.style.top = '0px';
+    stats.domElement.setSize(100,100)
+    //将统计对象添加到对应的<div>元素中
+    document.getElementById("Stats-output").appendChild(stats.domElement);
+    return stats;
+}
 var stats = initStats();
 
 const fov = 100;
