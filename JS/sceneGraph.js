@@ -134,11 +134,13 @@ function tank() {
   const heightSegments = 100;
   const sphereGeometry = new THREE.SphereGeometry(radius, widthSegments, heightSegments);
   const boxGeometry = new THREE.BoxGeometry(2,1,1)
+
   //太阳系
   const solarSystem = new THREE.Object3D()
   scene.add(solarSystem);
   
   const sunMaterial = new THREE.MeshPhongMaterial({emissive: 0xFFFF00});
+
   const sunMesh = new THREE.Mesh(boxGeometry, sunMaterial);
   sunMesh.scale.set(5, 5, 5);
   solarSystem.add(sunMesh);
