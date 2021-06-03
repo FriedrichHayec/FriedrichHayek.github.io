@@ -1,0 +1,40 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-06-02 12:11:03
+ * @LastEditTime: 2021-06-03 13:53:03
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ThreejsOffline\HTML\Scenegraph.html
+-->
+<!-- !SceneGraph 场景图例 -->
+<!-- !通过场景图例可以快速厘清场景中物体的关系 -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SceneGraph 场景关系图</title>
+        <link rel="stylesheet" href="https://friedrichhayec.github.io/ThreejsDisplay/css/Responsive.css"></link>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script src="https://threejsfundamentals.org/threejs/resources/threejs/r127/build/three.js"></script>
+    </head>
+    <body>
+        <canvas id="c"></canvas>
+        <pre><code class="language-mermaid"><div class="mermaid">
+            graph TB
+                Root[Scene] --> Node_1[solarSystem];
+                Node_1 --> Node_1_1["sunMesh×5"] & Node_1_2[earthOrbit];
+                Node_1_2 --> Node_1_2_1[earthMesh] & Node_1_2_2[moonOrbit];
+                Node_1_2_2 --> Node_1_2_2_1[moonMesh];
+        </div></code></pre>
+        <canvas id="d"></canvas>
+        <pre><code class="language-mermaid"><div class="mermaid">
+            graph LR
+                Root[Scene] --> Node_1[groundMesh];
+                Node_1 --> Node_1_1[tankMesh] & Node_1_2[treeMesh];
+                Node_1_1 --> Node_1_2_1[body] & Node_1_2_2[wheel];
+        </div></code></pre>
+        <canvas id="e"></canvas>
+        <script src="https://friedrichhayec.github.io/ThreejsDisplay/JS/sceneGraph.js"></script>
+    </body>
+</html>
